@@ -11,7 +11,7 @@ public class DebugLogger {
 	
 	public void setLOgger(String LogInformation) {
 
-		Logger logger = Logger.getLogger("MyLog");
+		Logger logger = Logger.getLogger("DebugLogger");
 		FileHandler fh;
 
 		try {

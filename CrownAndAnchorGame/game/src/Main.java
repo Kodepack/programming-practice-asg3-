@@ -1,11 +1,18 @@
 import java.util.List;
+
+import Test.DebugLogger;
+
 import java.io.*;
 
 public class Main {
 	
 	public static void main(String[] args) throws Exception {
 		
-	   BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
+		
+		DebugLogger debugLog=new DebugLogger();
+		debugLog.setLOgger("122344");
+		debugLog.setLOgger("55655555");
+		BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
 
         Dice d1 = new Dice();
         Dice d2 = new Dice();
