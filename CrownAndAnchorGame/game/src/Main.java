@@ -86,6 +86,7 @@ public class Main {
             System.out.println(String.format("Win count = %d, Lose Count = %d, %.2f", winCount, loseCount, (float) winCount/(winCount+loseCount)));
             System.out.println("");
             System.out.print("If you want exit press 'q' , 'Enter' for continue");
+            System.out.println(""); 
             totalWins += winCount;
             totalLosses += loseCount;
 
