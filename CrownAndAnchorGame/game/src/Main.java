@@ -104,9 +104,9 @@ public class Main {
                 int turn = 0;
                 while (player.balanceExceedsLimitBy(bet) && player.getBalance() < 200) {
                     turn++;
-                    DiceValue pick = DiceValue.getRandom();
+                    DiceValue pick = DiceValue.getRandomForPlayer();
 
-                    System.out.printf("Turn %d: %s bet %d on %s\n",
+                    System.out.printf("Turn %d: %s bet %d on %s\n", 
                             turn, player.getName(), bet, pick);
 
                     int winnings = game.playRound(player, pick, bet);
