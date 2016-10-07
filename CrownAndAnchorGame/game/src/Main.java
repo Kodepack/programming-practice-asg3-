@@ -10,7 +10,10 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-      
+    	System.out.println("**WARNING - Age 18 or Above Only - Department of Racing, Gaming & Liquor**");
+    	
+    	System.out.println("** Government of Western Australia **");
+    	
         System.out.println("Press 1 for start the Game");
         System.out.println("Press 2 for Gaming Instucions");
 
@@ -68,9 +71,6 @@ public class Main {
     public static void actoin()throws Exception{
          
 
-        DebugLogger debugLog = new DebugLogger();
-        debugLog.setLOgger("122344");
-        debugLog.setLOgger("55655555");
         BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
 
         Dice d1 = new Dice();
