@@ -28,6 +28,7 @@ public enum DiceValue {
 		double val = Math.random();
 		double biased = Math.pow(val, 2); //power will bias the value > 1 will reduce value < 1 will increase value
 		return values()[(int) (biased * (double) DiceValue.SPADE.ordinal())];
+		
 	}
 	
 }
