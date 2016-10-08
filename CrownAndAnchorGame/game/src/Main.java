@@ -70,15 +70,21 @@ public class Main {
 
     public static void actoin()throws Exception{
          
-
+    	Scanner scanner = new Scanner(System.in);
         BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
 
         Dice d1 = new Dice();
         Dice d2 = new Dice();
         Dice d3 = new Dice();
+        
+		// Reading from System.in
+		System.out.print("Enter the Name: ");
+		String name = scanner.next();
+		System.out.print("Enter the bet: ");
+		int bet = scanner.nextInt();
 
         //org.junit.runner.JUnitCore.main("Test.CorrectPayLevelTest");
-        Player player = new Player("Fred", 100);
+        Player player = new Player(name, 100);
         Game game = new Game(d1, d2, d3);
         List<DiceValue> cdv = game.getDiceValues();
 
@@ -90,12 +96,11 @@ public class Main {
             int loseCount = 0;
 
             for (int i = 0; i < 100; i++) {
-                String name = "Fred";
+
                 int balance = 100;
                 int limit = 0;
                 player = new Player(name, balance);
                 player.setLimit(limit);
-                int bet = 5;
 
                 System.out.println(String.format("Start Game %d: ", i));
                 System.out.println(String.format("%s starts with balance %d, limit %d",
