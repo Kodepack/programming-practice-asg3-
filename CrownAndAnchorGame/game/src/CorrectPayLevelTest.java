@@ -12,7 +12,7 @@ import java.io.InputStreamReader;
 import java.util.List;
 
 public class CorrectPayLevelTest {
-
+ 
 	@Test
 	    public void payLevelTest() throws IOException {
 

@@ -11,7 +11,10 @@ public class Dice {
 	}
 
 	public DiceValue roll() {
-		return DiceValue.getRandom();
+		//Kishantha
+		//need to set value before returning.
+		value =  DiceValue.getRandom();
+		return getValue();
 	}		
 	
 	public String toString() {

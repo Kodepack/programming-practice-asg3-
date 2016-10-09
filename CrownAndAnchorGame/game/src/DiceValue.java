@@ -21,9 +21,22 @@ public enum DiceValue {
 		return VALUE_REPR_MAP.get(value);
 	}
 	
-	public static DiceValue getRandom() {
-		int random = RANDOM.nextInt(DiceValue.SPADE.ordinal());
+	
+	public static DiceValue getRandomForPlayer() {
+		//Kishantha
+		//random without bias for player
+		int random = RANDOM.nextInt(DiceValue.SPADE.ordinal()+1);
 		return values()[random];
+		
+	}
+	public static DiceValue getRandom() {
+		//Kishantha - the nextInt method is a exclusive method so need to add 1 to make SPADE 
+		//included
+		//int random = RANDOM.nextInt(DiceValue.SPADE.ordinal()+1);
+		double val = Math.random();
+		double biased = Math.pow(val, 1.1); //power will bias the value > 1 will reduce value < 1 will increase value
+		return values()[(int) (biased * (double) DiceValue.SPADE.ordinal())];
+		
 	}
 	
 }

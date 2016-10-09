@@ -10,7 +10,10 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-      
+    	System.out.println("**WARNING - Age 18 or Above Only - Department of Racing, Gaming & Liquor**");
+    	
+    	System.out.println("** Government of Western Australia **");
+    	
         System.out.println("Press 1 for start the Game");
         System.out.println("Press 2 for Gaming Instucions");
 
@@ -67,18 +70,21 @@ public class Main {
 
     public static void actoin()throws Exception{
          
-
-        DebugLogger debugLog = new DebugLogger();
-        debugLog.setLOgger("122344");
-        debugLog.setLOgger("55655555");
+    	Scanner scanner = new Scanner(System.in);
         BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
 
         Dice d1 = new Dice();
         Dice d2 = new Dice();
         Dice d3 = new Dice();
+        
+		// Reading from System.in
+		System.out.print("Enter the Name: ");
+		String name = scanner.next();
+		System.out.print("Enter the bet: ");
+		int bet = scanner.nextInt();
 
         //org.junit.runner.JUnitCore.main("Test.CorrectPayLevelTest");
-        Player player = new Player("Fred", 100);
+        Player player = new Player(name, 100);
         Game game = new Game(d1, d2, d3);
         List<DiceValue> cdv = game.getDiceValues();
 
@@ -90,12 +96,11 @@ public class Main {
             int loseCount = 0;
 
             for (int i = 0; i < 100; i++) {
-                String name = "Fred";
+
                 int balance = 100;
                 int limit = 0;
                 player = new Player(name, balance);
                 player.setLimit(limit);
-                int bet = 5;
 
                 System.out.println(String.format("Start Game %d: ", i));
                 System.out.println(String.format("%s starts with balance %d, limit %d",
@@ -104,9 +109,9 @@ public class Main {
                 int turn = 0;
                 while (player.balanceExceedsLimitBy(bet) && player.getBalance() < 200) {
                     turn++;
-                    DiceValue pick = DiceValue.getRandom();
+                    DiceValue pick = DiceValue.getRandomForPlayer();
 
-                    System.out.printf("Turn %d: %s bet %d on %s\n",
+                    System.out.printf("Turn %d: %s bet %d on %s\n", 
                             turn, player.getName(), bet, pick);
 
                     int winnings = game.playRound(player, pick, bet);
